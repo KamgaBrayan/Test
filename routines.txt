@@ -19,6 +19,10 @@ public class MigUtils {
         return null;
     }
 
+    /** Surcharge : si Oracle renvoie deja une Date (colonne typee Date), on la renvoie telle quelle.
+     *  Evite l'erreur "parseAmpDate(String) is not applicable for the arguments (Date)". */
+    public static java.util.Date parseAmpDate(java.util.Date d){ return d; }
+
     /** Année d'une date (pour graduation_year). */
     public static Integer yearOf(java.util.Date d){
         if(d==null) return null;
@@ -85,10 +89,27 @@ public class MigUtils {
         return normalizeCmPhone(d); // un seul numero -> on le reconduit
     }
 
-    /** Adresse au format Fluxoon : {city,state,street,country,countryCode}. null si tout vide. */
-    public static java.util.Map<String,Object> jsonAddress(
-            String adr1,String adr2,String adr3,String adr4,String ville,String bpos){
-        // on assemble une "street" a partir des lignes d'adresse (hors e-mail)
+    /** Echappe une valeur pour l'inclure dans une chaine JSON. */
+    public static String jsonEsc(String v){
+        if(v==null) return "";
+        StringBuilder b=new StringBuilder();
+        for(int i=0;i<v.length();i++){
+            char c=v.charAt(i);
+            switch(c){
+                case '"':  b.append("\\\""); break;
+                case '\\': b.append("\\\\"); break;
+                case '\n': b.append("\\n"); break;
+                case '\r': b.append("\\r"); break;
+                case '\t': b.append("\\t"); break;
+                default:   b.append(c);
+            }
+        }
+        return b.toString();
+    }
+
+    /** Adresse au format Fluxoon en CHAINE JSON : {city,state,street,country,countryCode}.
+     *  Renvoie null si vide (colonne jsonb NULL). La colonne doit etre castee ::jsonb (voir guide). */
+    public static String jsonAddress(String adr1,String adr2,String adr3,String adr4,String ville,String bpos){
         StringBuilder street=new StringBuilder();
         for(String sline:new String[]{adr1,adr2,adr3,adr4}){
             if(sline!=null && sline.trim().length()>0 && sline.indexOf('@')<0){
@@ -102,25 +123,13 @@ public class MigUtils {
             streetStr = streetStr.isEmpty()? ("BP "+bpos.trim()) : (streetStr+" - BP "+bpos.trim());
         }
         if(city.isEmpty() && streetStr.isEmpty()) return null;
-        LinkedHashMap<String,Object> m=new LinkedHashMap<String,Object>();
-        m.put("city",   city);
-        m.put("state",  "");
-        m.put("street", streetStr);
-        m.put("country","Cameroon");
-        m.put("countryCode","CM");
-        return m;
+        return "{\"city\":\""+jsonEsc(city)+"\",\"state\":\"\",\"street\":\""+jsonEsc(streetStr)
+              +"\",\"country\":\"Cameroon\",\"countryCode\":\"CM\"}";
     }
 
-    /** Contact d'urgence au format jsonb (Object). On stocke le numero d'urgence.
-     *  Renvoie une liste (JSON array) avec un objet {phone}. null si pas de numero. */
-    public static java.util.List<java.util.Map<String,Object>> jsonEmergency(String phoneUrg){
+    /** Contact d'urgence en CHAINE JSON (array) : [{"phone","name","relationship"}]. null si vide. */
+    public static String jsonEmergency(String phoneUrg){
         if(phoneUrg==null || phoneUrg.trim().isEmpty()) return null;
-        LinkedHashMap<String,Object> c=new LinkedHashMap<String,Object>();
-        c.put("phone", phoneUrg);
-        c.put("name", "");
-        c.put("relationship", "");
-        java.util.ArrayList<java.util.Map<String,Object>> list=new java.util.ArrayList<java.util.Map<String,Object>>();
-        list.add(c);
-        return list;
+        return "[{\"phone\":\""+jsonEsc(phoneUrg)+"\",\"name\":\"\",\"relationship\":\"\"}]";
     }
 }
