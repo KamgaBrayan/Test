@@ -1,0 +1,61 @@
+package routines;
+
+import java.util.*;
+import java.text.SimpleDateFormat;
+
+public class MigUtils {
+
+    /** Clé cible (UUID). */
+    public static String uuid() { return java.util.UUID.randomUUID().toString(); }
+
+    /** Horodatage courant. */
+    public static java.util.Date now() { return new java.util.Date(); }
+
+    /** Dates Amplitude (jj/MM/aa, jj/MM/aaaa, aaaa-MM-jj). */
+    public static java.util.Date parseAmpDate(String s){
+        if(s==null||s.trim().isEmpty()) return null;
+        String[] fmts={"dd/MM/yy","dd/MM/yyyy","yyyy-MM-dd"};
+        for(String f:fmts){ try{ return new SimpleDateFormat(f).parse(s.trim()); }catch(Exception e){} }
+        return null;
+    }
+
+    /** Année d'une date (pour graduation_year). */
+    public static Integer yearOf(java.util.Date d){
+        if(d==null) return null;
+        Calendar c=Calendar.getInstance(); c.setTime(d);
+        return c.get(Calendar.YEAR);
+    }
+
+    /** Statut employé dérivé de MRRX (RA = radié -> TERMINATED). */
+    public static String statusFromMrrx(String mrrx){
+        return (mrrx!=null && mrrx.trim().equalsIgnoreCase("RA")) ? "TERMINATED" : "ACTIVE";
+    }
+
+    /** 1er e-mail trouvé dans des champs libres (ADR1..ADR4/BPOS). */
+    public static String extractEmail(String... fields){
+        if(fields==null) return null;
+        java.util.regex.Pattern p=java.util.regex.Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}");
+        for(String f:fields){ if(f!=null && f.indexOf('@')>0){ java.util.regex.Matcher m=p.matcher(f); if(m.find()) return m.group(); } }
+        return null;
+    }
+
+    /** 1er numéro de téléphone (NTEL contient souvent 2 numéros séparés par - ou espaces). */
+    public static String firstPhone(String ntel){
+        if(ntel==null||ntel.trim().isEmpty()) return null;
+        String p=ntel.split("[-/;]")[0].replaceAll("\\s+"," ").trim();
+        return p.isEmpty()? null : p;
+    }
+
+    /** Adresse en objet JSON (compatible colonne jsonb typée Object). null si vide. */
+    public static java.util.Map<String,Object> jsonAddress(
+            String adr1,String adr2,String adr3,String adr4,String ville,String bpos){
+        LinkedHashMap<String,Object> m=new LinkedHashMap<String,Object>();
+        List<String> lines=new ArrayList<String>();
+        for(String s:new String[]{adr1,adr2,adr3,adr4})
+            if(s!=null && s.trim().length()>0 && s.indexOf('@')<0) lines.add(s.trim());
+        if(!lines.isEmpty()) m.put("lines",lines);
+        if(ville!=null && ville.trim().length()>0) m.put("city",ville.trim());
+        if(bpos!=null && bpos.trim().length()>0) m.put("poBox",bpos.trim());
+        return m.isEmpty()? null : m;
+    }
+}
