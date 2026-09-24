@@ -1,0 +1,19 @@
+/** JSON classification {category, grade} en chaine (jsonb). null si vide. */
+public static String jsonClassification(String category,String grade){
+    if((category==null||category.trim().isEmpty()) && (grade==null||grade.trim().isEmpty())) return null;
+    return "{\"category\":\""+jsonEsc(category==null?"":category.trim())
+          +"\",\"grade\":\""+jsonEsc(grade==null?"":grade.trim())+"\"}";
+}
+/** JSON position {function, niv1, niv2, niv3} en chaine (jsonb). null si vide. */
+public static String jsonPosition(String fonc,String niv1,String niv2,String niv3){
+    if(fonc==null||fonc.trim().isEmpty()) return null;
+    return "{\"function\":\""+jsonEsc(fonc.trim())
+          +"\",\"niv1\":\""+jsonEsc(niv1==null?"":niv1)
+          +"\",\"niv2\":\""+jsonEsc(niv2==null?"":niv2)
+          +"\",\"niv3\":\""+jsonEsc(niv3==null?"":niv3)+"\"}";
+}
+/** Type d'emploi depuis TYPC (1->PERMANENT, 2->TEMPORARY). */
+public static String employmentType(String typc){
+    if(typc!=null && typc.trim().equals("2")) return "TEMPORARY";
+    return "PERMANENT";
+}
