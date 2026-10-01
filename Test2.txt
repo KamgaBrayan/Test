@@ -1,0 +1,52 @@
+CREATE TABLE public.legal_entity_conventions (
+    company_id character varying(255) NOT NULL,
+    legal_entity_id character varying(255) NOT NULL,
+    convention_id character varying(255) NOT NULL,
+    effective_from date NOT NULL,
+    effective_to date,
+    reason text,
+    created_at timestamp(6) with time zone NOT NULL,
+    updated_at timestamp(6) with time zone
+);
+
+
+ALTER TABLE public.legal_entity_conventions OWNER TO postgres;
+
+COPY public.flyway_schema_history (installed_rank, version, description, type, script, checksum, installed_by, installed_on, execution_time, success) FROM stdin;
+1	1	initial schema	SQL	V1__initial_schema.sql	793919498	postgres	2026-09-14 22:11:23.819833	698	t
+2	2	legal entity and member profile	SQL	V2__legal_entity_and_member_profile.sql	-2143591710	postgres	2026-09-14 22:11:24.559191	31	t
+3	3	versioned company skills	SQL	V3__versioned_company_skills.sql	-126453564	postgres	2026-09-14 22:11:24.604679	144	t
+4	4	employee engagement type	SQL	V4__employee_engagement_type.sql	-878383324	postgres	2026-09-16 12:42:05.604399	14	t
+5	5	optional job description	SQL	V5__optional_job_description.sql	-30774001	postgres	2026-09-16 16:21:02.698029	16	t
+6	6	legal entity conventions	SQL	V6__legal_entity_conventions.sql	-2028814143	postgres	2026-09-18 11:27:49.043283	53	t
+7	7	movement types	SQL	V7__movement_types.sql	-8256292	postgres	2026-09-19 00:34:10.408771	52	t
+8	8	movement types labels	SQL	V8__movement_types_labels.sql	1389922631	postgres	2026-09-19 00:40:12.165223	7	t
+9	9	classification policies	SQL	V9__classification_policies.sql	-1843114739	postgres	2026-09-29 08:03:41.852759	67	t
+10	10	contract policies	SQL	V10__contract_policies.sql	1301407237	postgres	2026-09-29 08:03:41.952908	47	t
+11	11	graph edge type key	SQL	V11__graph_edge_type_key.sql	-1260950031	postgres	2026-09-29 08:03:42.012032	24	t
+12	12	graph violations	SQL	V12__graph_violations.sql	1986055817	postgres	2026-09-29 12:46:28.94078	33	t
+\.
+
+ALTER TABLE ONLY public.job_positions
+    ADD CONSTRAINT job_positions_pkey PRIMARY KEY (company_id, position_id);
+
+
+--
+-- Name: legal_entity_conventions legal_entity_conventions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.legal_entity_conventions
+    ADD CONSTRAINT legal_entity_conventions_pkey PRIMARY KEY (company_id, legal_entity_id, convention_id, effective_from);
+
+--
+-- Name: idx_legal_entity_convention_convention; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX idx_legal_entity_convention_convention ON public.legal_entity_conventions USING btree (convention_id);
+
+
+--
+-- Name: idx_legal_entity_convention_entity; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX idx_legal_entity_convention_entity ON public.legal_entity_conventions USING btree (company_id, legal_entity_id, effective_from);
