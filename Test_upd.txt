@@ -1,0 +1,110 @@
+cdos      = MigUtils.trim(row.CDOS)
+nmat      = MigUtils.trim(row.NMAT)
+empKey    = Var.cdos + "|" + Var.nmat
+entry     = MigUtils.firstDate(MigUtils.realDate(row.DTES), MigUtils.realDate(row.DDCA), prem.PREMIERE_DATE, row.DCRE)
+dfes      = MigUtils.realDate(row.DFES)
+probEnd   = (Var.entry != null && Var.dfes != null && !Var.dfes.before(Var.entry)) ? Var.dfes : null
+probStart = Var.probEnd != null ? Var.entry : null
+exitRaw   = "RA".equals(MigUtils.trim(row.MRRX)) ? MigUtils.firstDate(MigUtils.realDate(row.DMRR), context.DATE_EXTRACTION) : null
+exitDate  = Var.exitRaw == null ? null : MigUtils.maxDate(Var.exitRaw, Var.entry)
+dtit      = MigUtils.realDate(row.DTIT)
+confirm   = (Var.dtit != null && Var.entry != null && !Var.dtit.before(Var.entry)
+             && (Var.probStart == null || !Var.dtit.before(Var.probStart))
+             && (Var.exitDate == null || !Var.exitDate.before(Var.dtit))) ? Var.dtit : null
+alerte    = (Var.dfes != null && Var.probEnd == null ? "Fin d'essai avant l'entree ; " : "")
+          + (Var.dtit != null && Var.confirm == null ? "Titularisation incoherente ; " : "")
+          + (Var.exitRaw != null && !Var.exitRaw.equals(Var.exitDate) ? "Sortie avant l'entree ; " : "")
+
+
+
+
+
+
+Sortie out_travail → WORK_DIR/engagements.csv, colonnes : EMP_KEY, CDOS, NMAT, ENGAGEMENT_ID, ENTRY_DATE (Var.entry), CONFIRM_DATE, EXIT_DATE, MRRX, DMRR (MigUtils.realDate(row.DMRR)), MTFR (MigUtils.lpad(row.MTFR,2)), TYPC, CLAS (MigUtils.lpad(row.CLAS,2)), CAT (MigUtils.lpad(row.CAT,2)), ECH (MigUtils.trim(row.ECH)), DDCA (MigUtils.realDate(row.DDCA)), DECC (MigUtils.realDate(row.DECC)), EMPLOYMENT_TYPE (ct.employment_type), ENGAGEMENT_TYPE.
+Alerte (filtre !Var.alerte.isEmpty()) : cdos, nmat, motif = Var.alerte. Rejet (filtre Var.entry == null) : aucune date d'entrée exploitable.
+
+
+
+
+e           = row.EMP_KEY
+pNiv1       = MigUtils.peekS("NIV1", Var.e)
+pFonc       = MigUtils.peekS("FONC", Var.e)
+pCat        = MigUtils.peekS("CAT", Var.e)
+pEch        = MigUtils.peekS("ECH", Var.e)
+pPeriode    = MigUtils.peekS("PERIODE", Var.e)
+cNiv1       = MigUtils.carryS("NIV1", Var.e, row.NIV1)
+cFonc       = MigUtils.carryS("FONC", Var.e, row.FONC)
+cCat        = MigUtils.carryS("CAT", Var.e, row.CAT)
+cEch        = MigUtils.carryS("ECH", Var.e, row.ECH)
+chgFonction = "FONCTION".equals(row.TYPE_EVT) && (!MigUtils.eq(Var.pNiv1, Var.cNiv1) || !MigUtils.eq(Var.pFonc, Var.cFonc))
+chgCateg    = "CATEG".equals(row.TYPE_EVT) && (!MigUtils.eq(Var.pCat, Var.cCat) || !MigUtils.eq(Var.pEch, Var.cEch))
+jalon       = "TITULARISATION".equals(row.TYPE_EVT) || "REPRISE".equals(row.TYPE_EVT) || "SORTIE".equals(row.TYPE_EVT)
+seq         = Var.chgFonction ? MigUtils.next("SEQ", Var.e) : 0
+cPeriode    = Var.chgFonction ? MigUtils.carryS("PERIODE", Var.e, MigUtils.detId("EMPL|" + Var.e + "|" + Var.seq)) : Var.pPeriode
+
+
+
+
+actif     = row.DERNIER && eng.EXIT_DATE == null
+fin       = row.DERNIER ? (eng.EXIT_DATE == null ? null : MigUtils.maxDate(eng.EXIT_DATE, row.START_DATE)) : MigUtils.maxDate(MigUtils.addDays(row.NEXT_START, -1), row.START_DATE)
+debut     = row.SEQ == 1 ? eng.ENTRY_DATE : row.START_DATE
+uniteSite = (site.company_unit_id == null || site.company_unit_id.isEmpty()) ? null : site.company_unit_id
+regle     = fp.regle != null ? fp.regle : "A_CREER_PAR_ETL"
+
+
+
+posTrouve  = pid.position_id != null ? pid.position_id : pu.position_id
+creer      = Var.posTrouve == null
+positionId = Var.creer ? MigUtils.detId("POS|" + row.TITRE_COMPLET + "|" + row.UNIT_CIBLE) : Var.posTrouve
+unitId     = pid.position_id != null ? pid.company_unit_id : (pu.position_id != null ? pu.company_unit_id : row.UNIT_CIBLE)
+siteId     = pid.position_id != null ? pid.site_id : (pu.position_id != null ? pu.site_id : row.SITE_ID)
+titre      = pid.position_id != null ? pid.titre_complet : (pu.position_id != null ? pu.titre_complet : row.TITRE_COMPLET)
+
+
+source ← "CATEG".equals(row.TYPE_EVT) ? "CTAB26" : "SORTIE".equals(row.TYPE_EVT) ? "CTAB23"
+       : "REPRISE".equals(row.TYPE_EVT) ? "MRRX" : "TITULARISATION".equals(row.TYPE_EVT) ? "RHPAGENT" : "RHTHFONC"
+cdos   ← "SORTIE".equals(row.TYPE_EVT) ? row.CDOS : "*"
+code   ← "CATEG".equals(row.TYPE_EVT) ? row.CMOT
+       : "SORTIE".equals(row.TYPE_EVT) ? eng.MTFR
+       : "REPRISE".equals(row.TYPE_EVT) ? "RE"
+       : "TITULARISATION".equals(row.TYPE_EVT) ? "DTIT"
+       : "true".equalsIgnoreCase(row.PREMIER) ? "PREMIERE_LIGNE"
+       : MigUtils.eq(row.P_NIV1, row.C_NIV1) ? "CHGT_FONCTION" : "CHGT_AGENCE"
+
+
+
+ev      = row.TYPE_EVT
+premier = "true".equalsIgnoreCase(row.PREMIER)
+gc      = "CATEG".equals(Var.ev) ? MigUtils.gradeChange(row.P_CAT, row.P_ECH, row.C_CAT, row.C_ECH) : "NONE"
+type    = "FONCTION".equals(Var.ev) ? (Var.premier ? "HIRING" : (MigUtils.eq(row.P_NIV1, row.C_NIV1) ? "FUNCTION_CHANGE" : "TRANSFER"))
+        : "CATEG".equals(Var.ev) ? ("UP".equals(Var.gc) ? "PROMOTION" : ("DOWN".equals(Var.gc) ? "DEMOTION" : "RECLASSIFICATION"))
+        : "TITULARISATION".equals(Var.ev) ? "CONFIRMATION"
+        : "REPRISE".equals(Var.ev) ? "REINSTATEMENT" : "EXIT"
+entree  = "HIRING".equals(Var.type)
+sortie  = "EXIT".equals(Var.type)
+classF  = "CATEG".equals(Var.ev) ? MigUtils.jsonClassification(row.P_ECH, ef.TITLE_CODE, row.P_CAT, cf.category_nature)
+        : MigUtils.jsonClassification(ef.GRADE_CODE, ef.TITLE_CODE, ef.CATEGORY_CODE, ef.CATEGORY_NATURE)
+classT  = "CATEG".equals(Var.ev) ? MigUtils.jsonClassification(row.C_ECH, et.TITLE_CODE, row.C_CAT, ct.category_nature)
+        : MigUtils.jsonClassification(et.GRADE_CODE, et.TITLE_CODE, et.CATEGORY_CODE, et.CATEGORY_NATURE)
+
+
+
+
+-- Volumes
+SELECT 'engagements' t, count(*) FROM employee_engagements WHERE company_id = '0a2cc461-2674-4861-912a-0c624953ef64'
+UNION ALL SELECT 'emplois actifs', count(*) FROM employments WHERE company_id = '0a2cc461-2674-4861-912a-0c624953ef64' AND status = 'ACTIVE'
+UNION ALL SELECT 'emplois clos', count(*) FROM employments WHERE company_id = '0a2cc461-2674-4861-912a-0c624953ef64' AND status = 'CLOSED'
+UNION ALL SELECT 'embauches', count(*) FROM employment_movements WHERE company_id = '0a2cc461-2674-4861-912a-0c624953ef64' AND type_code = 'HIRING'
+UNION ALL SELECT 'postes crees ETL', count(*) FROM job_positions WHERE company_id = '0a2cc461-2674-4861-912a-0c624953ef64' AND mission_summary LIKE 'Poste cr%reprise Amplitude%';
+
+-- Chaque salarié présent a exactement un emploi actif
+SELECT g.employee_id FROM employee_engagements g
+LEFT JOIN employments e ON e.company_id = g.company_id AND e.employee_id = g.employee_id AND e.status = 'ACTIVE'
+WHERE g.company_id = '0a2cc461-2674-4861-912a-0c624953ef64' AND g.exit_date IS NULL
+GROUP BY g.employee_id HAVING count(e.employment_id) <> 1;
+
+-- Chaque engagement a une embauche
+SELECT g.employee_id FROM employee_engagements g
+WHERE g.company_id = '0a2cc461-2674-4861-912a-0c624953ef64'
+  AND NOT EXISTS (SELECT 1 FROM employment_movements m
+                  WHERE m.company_id = g.company_id AND m.employee_id = g.employee_id AND m.type_code = 'HIRING');
