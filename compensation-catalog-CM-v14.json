@@ -1,0 +1,4419 @@
+{
+  "formatVersion": "2.1",
+  "countryCode": "CM",
+  "catalogVersion": 14,
+  "exportedAt": "2026-10-15T13:02:16.387155499Z",
+  "elements": [
+    {
+      "number": "101",
+      "code": "BASE_SALARY",
+      "label": "Salaire de base",
+      "type": "BASE_SALARY",
+      "presentation": {
+        "description": "Rémunération contractuelle de référence, versée pour la durée de travail prévue.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "WEEKLY",
+        "SEMI_MONTHLY",
+        "HOURLY",
+        "BIWEEKLY",
+        "DAILY",
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "GRID",
+        "CLASSIFICATION_GRID",
+        "HOURLY_WAGE",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "150",
+      "code": "SURSALAIRE",
+      "label": "Sursalaire",
+      "type": "BASE_SALARY",
+      "presentation": {
+        "description": "Complément contractuel au salaire catégoriel, versé avec le salaire de base (grille CCA 1046).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "151",
+      "code": "CATEGORY_BASE_SALARY",
+      "label": "Salaire de base catégoriel",
+      "type": "BASE_SALARY",
+      "presentation": {
+        "description": "Salaire minimum de la catégorie et de l'échelon de l'employé, calculé par le moteur à partir de la grille conventionnelle.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "152",
+      "code": "COMPLEMENTARY_BASE_SALARY",
+      "label": "Salaire de base complémentaire",
+      "type": "BASE_SALARY",
+      "presentation": {
+        "description": "Complément contractuel du salaire de base (grille CCA 1030).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "153",
+      "code": "CATEGORY_MAXIMUM_SALARY",
+      "label": "Salaire maximum catégoriel",
+      "type": "BASE_SALARY",
+      "presentation": {
+        "description": "Salaire maximum de la catégorie et de l'échelon de l'employé (grille conventionnelle), calculé par le moteur.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "154",
+      "code": "CATEGORY_MINIMUM_SALARY",
+      "label": "Salaire minimum catégoriel",
+      "type": "BASE_SALARY",
+      "presentation": {
+        "description": "Salaire du premier échelon (A) de la catégorie de l'employé dans la grille conventionnelle, calculé par le moteur. Assiette de la prime d'ancienneté.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "201",
+      "code": "OVERTIME",
+      "label": "Heures supplémentaires",
+      "type": "OVERTIME",
+      "presentation": {
+        "description": "Rémunération des heures effectuées au-delà de la durée de travail de référence, majorations comprises.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "QUANTITY_BASED",
+      "absenceSensitivity": "NOT_SENSITIVE",
+      "allowedFrequencies": [
+        "WEEKLY",
+        "SEMI_MONTHLY",
+        "MONTHLY",
+        "BIWEEKLY"
+      ],
+      "allowedCalculationMethods": [
+        "HOURLY_RATE",
+        "HOURLY_RATE_MULTIPLIER"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "202",
+      "code": "NIGHT_WORK_PREMIUM",
+      "label": "Majoration pour travail de nuit",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Majoration des heures normales effectuées de nuit.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "QUANTITY_BASED",
+      "absenceSensitivity": "NOT_SENSITIVE",
+      "allowedFrequencies": [
+        "WEEKLY",
+        "SEMI_MONTHLY",
+        "MONTHLY",
+        "BIWEEKLY"
+      ],
+      "allowedCalculationMethods": [
+        "HOURLY_RATE_MULTIPLIER",
+        "HOURLY_RATE",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "250",
+      "code": "HS20",
+      "label": "Heures supps. 20%",
+      "type": "OVERTIME",
+      "presentation": {
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "NOT_APPLICABLE",
+      "absenceSensitivity": "NOT_SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY",
+        "HOURLY",
+        "WEEKLY",
+        "DAILY",
+        "ONE_TIME"
+      ],
+      "allowedCalculationMethods": [
+        "HOURLY_RATE_MULTIPLIER"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "251",
+      "code": "OVERTIME_FLAT_RATE",
+      "label": "Forfait heures supplémentaires",
+      "type": "OVERTIME",
+      "presentation": {
+        "description": "Montant mensuel forfaitaire rémunérant les heures supplémentaires, indépendant des heures réellement faites (grille CCA 1250).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "301",
+      "code": "SENIORITY_BONUS",
+      "label": "Prime d'ancienneté",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime liée à l'ancienneté de l'employé, selon un barème ou un pourcentage du salaire de base.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "RULE_DRIVEN",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "PERCENTAGE",
+        "GRID",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL",
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "302",
+      "code": "PERFORMANCE_BONUS",
+      "label": "Prime de performance",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime variable liée à l'atteinte d'objectifs individuels ou collectifs.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "NOT_APPLICABLE",
+      "absenceSensitivity": "RULE_DRIVEN",
+      "allowedFrequencies": [
+        "MONTHLY",
+        "QUARTERLY",
+        "ANNUAL",
+        "SEMI_ANNUAL",
+        "ONE_TIME"
+      ],
+      "allowedCalculationMethods": [
+        "PERCENTAGE",
+        "GRID",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "303",
+      "code": "THIRTEENTH_MONTH",
+      "label": "Treizième mois",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Gratification annuelle équivalente à un mois de salaire, proratisée selon la présence.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "RULE_DRIVEN",
+      "allowedFrequencies": [
+        "SEMI_ANNUAL",
+        "ANNUAL"
+      ],
+      "allowedCalculationMethods": [
+        "PERCENTAGE",
+        "FORMULA",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL",
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "304",
+      "code": "EXCEPTIONAL_BONUS",
+      "label": "Prime exceptionnelle",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime ponctuelle, sans périodicité ni proratisation.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "NOT_APPLICABLE",
+      "absenceSensitivity": "NOT_SENSITIVE",
+      "allowedFrequencies": [
+        "ONE_TIME"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "350",
+      "code": "RESPONSIBILITY_BONUS",
+      "label": "Prime de responsabilité",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime liée au niveau de responsabilité du poste (grille CCA 2135).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "351",
+      "code": "CLOTHING_BONUS",
+      "label": "Prime vestimentaire",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime d'habillement versée pour la tenue professionnelle (grille CCA 3051).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "RULE_DRIVEN",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "352",
+      "code": "TELLER_BONUS",
+      "label": "Prime de guichet",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime du personnel tenant un guichet, selon la catégorie de l'agence (grille CCA 2100).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "353",
+      "code": "CASH_HANDLING_BONUS",
+      "label": "Prime de caisse",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime de maniement de fonds du personnel de caisse, selon la catégorie de l'agence (grille CCA 2090).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "354",
+      "code": "FROZEN_SENIORITY_BONUS",
+      "label": "Ancienneté gelée",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Prime d'ancienneté figée à l'ancien barème, maintenue à titre individuel (grille CCA 1110).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "355",
+      "code": "VAL_FLAT_RATE",
+      "label": "Forfait VAL",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Forfait mensuel VAL (grille CCA 2190).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "401",
+      "code": "SALES_COMMISSION",
+      "label": "Commission sur ventes",
+      "type": "BONUS",
+      "presentation": {
+        "description": "Rémunération variable calculée sur les ventes ou la marge éligibles.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "QUANTITY_BASED",
+      "absenceSensitivity": "NOT_SENSITIVE",
+      "allowedFrequencies": [
+        "QUARTERLY",
+        "MONTHLY",
+        "ONE_TIME"
+      ],
+      "allowedCalculationMethods": [
+        "GRID",
+        "FORMULA",
+        "PERCENTAGE",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL",
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "501",
+      "code": "TRANSPORT_ALLOWANCE",
+      "label": "Indemnité de transport",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité périodique couvrant les frais de déplacement domicile-travail.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FORMULA",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL",
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "502",
+      "code": "HOUSING_ALLOWANCE",
+      "label": "Indemnité de logement",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité périodique de logement, forfaitaire ou en pourcentage du salaire de base.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "RULE_DRIVEN",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "PERCENTAGE",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL",
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "503",
+      "code": "MEAL_ALLOWANCE",
+      "label": "Indemnité de repas",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité versée par jour éligible ; recomptée sur les faits, jamais proratisée.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "QUANTITY_BASED",
+      "absenceSensitivity": "NOT_SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FORMULA",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "504",
+      "code": "ON_CALL_ALLOWANCE",
+      "label": "Indemnité d'astreinte",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité rémunérant les périodes d'astreinte et, le cas échéant, les interventions.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "QUANTITY_BASED",
+      "absenceSensitivity": "NOT_SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "HOURLY_RATE",
+        "FORMULA",
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "550",
+      "code": "REPRESENTATION_ALLOWANCE",
+      "label": "Indemnité de représentation",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité couvrant les frais de représentation liés à la fonction (grille CCA 3050).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "RULE_DRIVEN",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "551",
+      "code": "ADDITIONAL_REPRESENTATION_ALLOWANCE",
+      "label": "Indemnité de représentation complémentaire",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Complément individuel à l'indemnité de représentation (grille CCA 3055).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "RULE_DRIVEN",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "552",
+      "code": "RISK_ALLOWANCE",
+      "label": "Indemnité de risque",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité compensant l'exposition à un risque lié au poste (grille CCA 3075).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "553",
+      "code": "MILK_ALLOWANCE",
+      "label": "Indemnité de lait",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité de lait des postes exposés (caisse, archives) (grille CCA 3030).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED",
+        "GRID"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "554",
+      "code": "NORTH_REGION_TRAVEL_ALLOWANCE",
+      "label": "Indemnité de déplacement Grand Nord",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité de déplacement des agents affectés dans les régions du Grand Nord (grille CCA 3010).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "555",
+      "code": "SUPPORT_ALLOWANCE",
+      "label": "Indemnité de soutien",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité de soutien (grille CCA 3105).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "556",
+      "code": "TRAVEL_ALLOWANCE",
+      "label": "Indemnité de déplacement",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité de déplacement (grille CCA 3020).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FIXED"
+      ],
+      "allowedExecutions": [
+        "COMPENSATION"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "557",
+      "code": "HOUSING_ALLOWANCE_40",
+      "label": "Indemnité de logement 40 %",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité de logement CCA : 40 % du salaire de base, salariés non déplacés (grille CCA 3125).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FORMULA",
+        "PERCENTAGE"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "DEACTIVATED",
+      "validFrom": "2026-01-01",
+      "validTo": "2026-01-01"
+    },
+    {
+      "number": "558",
+      "code": "HOUSING_ALLOWANCE_43",
+      "label": "Indemnité de logement 43 %",
+      "type": "ALLOWANCE",
+      "presentation": {
+        "description": "Indemnité de logement CCA : 43 % du salaire de base, salariés déplacés (grille CCA 3125).",
+        "labels": {},
+        "descriptions": {}
+      },
+      "prorationCategory": "TIME_BASED",
+      "absenceSensitivity": "SENSITIVE",
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedCalculationMethods": [
+        "FORMULA",
+        "PERCENTAGE"
+      ],
+      "allowedExecutions": [
+        "PAYROLL"
+      ],
+      "status": "DEACTIVATED",
+      "validFrom": "2026-01-01",
+      "validTo": "2026-01-01"
+    }
+  ],
+  "benefitKinds": [
+    {
+      "number": "650",
+      "code": "CAR",
+      "label": "Car",
+      "presentation": {
+        "description": "N'importe quelle vehicule",
+        "labels": {},
+        "descriptions": {}
+      },
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedSupplyModes": [
+        "IN_KIND"
+      ],
+      "characteristics": [
+        {
+          "code": "PROFESSIONAL_USE",
+          "label": "Usage professionnel",
+          "valueType": "BOOLEAN",
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "PRIVATE_USE",
+          "label": "Usage privé",
+          "valueType": "BOOLEAN",
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "FUEL_PROVIDED",
+          "label": "Carburant fourni par l'employeur",
+          "valueType": "BOOLEAN",
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "EMPLOYEE_CONTRIBUTION",
+          "label": "Participation périodique du salarié",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "DECLARED_VALUE",
+          "label": "Coût de l'avantage déclaré par l'employeur",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        }
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "651",
+      "code": "HOUSING",
+      "label": "Logement",
+      "presentation": {
+        "description": "Logement fourni par l'employeur. Évalué forfaitairement à 15 % de la rémunération brute taxable.",
+        "labels": {},
+        "descriptions": {},
+        "legalReference": "CGI Cameroun, art. 33 (barème des avantages en nature)"
+      },
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedSupplyModes": [
+        "IN_KIND",
+        "CASH"
+      ],
+      "characteristics": [
+        {
+          "code": "EMPLOYEE_CONTRIBUTION",
+          "label": "Participation périodique du salarié",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "DECLARED_VALUE",
+          "label": "Coût de l'avantage déclaré par l'employeur",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        }
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "652",
+      "code": "ELECTRICITY",
+      "label": "Électricité",
+      "presentation": {
+        "description": "Électricité prise en charge par l'employeur. Évaluée forfaitairement à 4 % de la rémunération brute taxable.",
+        "labels": {},
+        "descriptions": {},
+        "legalReference": "CGI Cameroun, art. 33 (barème des avantages en nature)"
+      },
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedSupplyModes": [
+        "IN_KIND",
+        "CASH"
+      ],
+      "characteristics": [
+        {
+          "code": "EMPLOYEE_CONTRIBUTION",
+          "label": "Participation périodique du salarié",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "DECLARED_VALUE",
+          "label": "Coût de l'avantage déclaré par l'employeur",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        }
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "653",
+      "code": "WATER",
+      "label": "Eau",
+      "presentation": {
+        "description": "Eau prise en charge par l'employeur. Évaluée forfaitairement à 2 % de la rémunération brute taxable.",
+        "labels": {},
+        "descriptions": {},
+        "legalReference": "CGI Cameroun, art. 33 (barème des avantages en nature)"
+      },
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedSupplyModes": [
+        "IN_KIND",
+        "CASH"
+      ],
+      "characteristics": [
+        {
+          "code": "EMPLOYEE_CONTRIBUTION",
+          "label": "Participation périodique du salarié",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "DECLARED_VALUE",
+          "label": "Coût de l'avantage déclaré par l'employeur",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        }
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "654",
+      "code": "DOMESTIC_STAFF",
+      "label": "Domestique",
+      "presentation": {
+        "description": "Personnel domestique rémunéré par l'employeur. Évalué forfaitairement à 5 % de la rémunération brute taxable par domestique.",
+        "labels": {},
+        "descriptions": {},
+        "legalReference": "CGI Cameroun, art. 33 (barème des avantages en nature)"
+      },
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedSupplyModes": [
+        "IN_KIND"
+      ],
+      "characteristics": [
+        {
+          "code": "STAFF_COUNT",
+          "label": "Nombre de domestiques",
+          "valueType": "INTEGER",
+          "unit": "UNIT",
+          "minimum": 1,
+          "obligation": "REQUIRED",
+          "evidenceRequired": false
+        },
+        {
+          "code": "EMPLOYEE_CONTRIBUTION",
+          "label": "Participation périodique du salarié",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "DECLARED_VALUE",
+          "label": "Coût de l'avantage déclaré par l'employeur",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        }
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "number": "655",
+      "code": "FOOD",
+      "label": "Nourriture",
+      "presentation": {
+        "description": "Nourriture fournie par l'employeur. Évaluée forfaitairement à 10 % de la rémunération brute taxable.",
+        "labels": {},
+        "descriptions": {},
+        "legalReference": "CGI Cameroun, art. 33 (barème des avantages en nature)"
+      },
+      "allowedFrequencies": [
+        "MONTHLY"
+      ],
+      "allowedSupplyModes": [
+        "IN_KIND",
+        "CASH"
+      ],
+      "characteristics": [
+        {
+          "code": "EMPLOYEE_CONTRIBUTION",
+          "label": "Participation périodique du salarié",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        },
+        {
+          "code": "DECLARED_VALUE",
+          "label": "Coût de l'avantage déclaré par l'employeur",
+          "valueType": "MONEY",
+          "unit": "CURRENCY",
+          "minimum": 0,
+          "obligation": "OPTIONAL",
+          "evidenceRequired": false
+        }
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    }
+  ],
+  "inputs": [
+    {
+      "code": "ABSENCE_DAYS",
+      "label": "Jours d'absence",
+      "presentation": {
+        "description": "Nombre total de jours d'absence reconnus pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ABSENCE_DEDUCTIBLE_HOURS",
+      "label": "Heures d'absence à déduire",
+      "presentation": {
+        "description": "Volume d'absence restant à déduire de la rémunération après neutralisation de la part déjà prise en compte par le prorata. Une correction manuelle est possible.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "SYSTEM",
+        "MANUAL",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ABSENCE_HOURS",
+      "label": "Heures d'absence",
+      "presentation": {
+        "description": "Volume total d'heures d'absence constatées sur la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ABSENCE_PAID_HOURS",
+      "label": "Heures d'absence rémunérées",
+      "presentation": {
+        "description": "Volume d'heures d'absence conservant une rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ABSENCE_UNPAID_HOURS",
+      "label": "Heures d'absence non rémunérées",
+      "presentation": {
+        "description": "Volume d'heures d'absence ne conservant pas de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ACCEPTED_PRODUCTION_UNITS",
+      "label": "Unités produites acceptées",
+      "presentation": {
+        "description": "Nombre d'unités produites et acceptées après contrôle.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ACCEPTED_UNITS_CORRECTION",
+      "label": "Correction d'unités acceptées",
+      "presentation": {
+        "description": "Différence signée d'unités de production acceptées pour une période antérieure.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "AUTHORIZED_ABSENCE_HOURS",
+      "label": "Heures d'absence autorisée",
+      "presentation": {
+        "description": "Volume d'heures d'absence autorisées.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "BUSINESS_DISTANCE_KM",
+      "label": "Distance professionnelle parcourue",
+      "presentation": {
+        "description": "Distance parcourue et validée pour l'activité professionnelle.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "KILOMETER",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "CALENDAR_DAYS",
+      "label": "Jours calendaires de la période",
+      "presentation": {
+        "description": "Nombre de jours calendaires de la période de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "SYSTEM",
+        "MANUAL",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "CANCELLED_SALES_AMOUNT",
+      "label": "Ventes annulées",
+      "presentation": {
+        "description": "Montant des ventes annulées à prendre en compte dans l'assiette commerciale.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "MONEY",
+      "unit": "CURRENCY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "COLLECTED_SALES_AMOUNT",
+      "label": "Ventes encaissées",
+      "presentation": {
+        "description": "Montant des ventes effectivement encaissées pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "MONEY",
+      "unit": "CURRENCY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "COMPLETED_DELIVERIES",
+      "label": "Livraisons achevées",
+      "presentation": {
+        "description": "Nombre de livraisons achevées et validées pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "COMPLETED_MISSIONS",
+      "label": "Missions achevées",
+      "presentation": {
+        "description": "Nombre de missions achevées et validées pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "COMPLETED_TASKS",
+      "label": "Tâches achevées",
+      "presentation": {
+        "description": "Nombre de tâches achevées et validées pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "CONTRACT_WORK_RATIO",
+      "label": "Quotité contractuelle de travail",
+      "presentation": {
+        "description": "Part du temps plein prévue par le contrat sur la période ; 1 représente un temps plein.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "RATE",
+      "unit": "RATIO",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ELIGIBLE_CONTRACTS_COUNT",
+      "label": "Contrats commerciaux éligibles",
+      "presentation": {
+        "description": "Nombre de contrats commerciaux validés et éligibles à rémunération variable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ELIGIBLE_MARGIN_AMOUNT",
+      "label": "Marge éligible à commission",
+      "presentation": {
+        "description": "Montant de marge validée servant éventuellement de base à une commission.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "MONEY",
+      "unit": "CURRENCY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ELIGIBLE_SALES_AMOUNT",
+      "label": "Ventes éligibles à commission",
+      "presentation": {
+        "description": "Montant des ventes validées et éligibles à commission sur la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "MONEY",
+      "unit": "CURRENCY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "EMPLOYED_CALENDAR_DAYS",
+      "label": "Jours calendaires sous contrat",
+      "presentation": {
+        "description": "Nombre de jours calendaires pendant lesquels le contrat était en vigueur sur la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "EMPLOYED_SCHEDULED_DAYS",
+      "label": "Jours prévus sous contrat",
+      "presentation": {
+        "description": "Nombre de jours de travail prévus pendant lesquels le contrat était en vigueur.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "FIELD_ASSIGNMENT_DAYS",
+      "label": "Jours de mission sur le terrain",
+      "presentation": {
+        "description": "Nombre de jours reconnus comme mission sur le terrain.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "HOLIDAY_HOURS",
+      "label": "Heures normales de jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires effectuées un jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "INTEGRATION_SCORE",
+      "label": "Score de performance validé",
+      "presentation": {
+        "description": "Score final validé pour un dispositif de performance identifié.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "KPI_ACHIEVEMENT_RATIO",
+      "label": "Taux d'atteinte de l'indicateur",
+      "presentation": {
+        "description": "Rapport validé entre résultat et cible de l'indicateur identifié ; 1 signifie 100 %.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "RATE",
+      "unit": "RATIO",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "KPI_ACTUAL",
+      "label": "Résultat de l'indicateur de performance",
+      "presentation": {
+        "description": "Valeur réalisée et validée de l'indicateur identifié pour la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "KPI_TARGET",
+      "label": "Cible de l'indicateur de performance",
+      "presentation": {
+        "description": "Valeur cible de l'indicateur identifié pour la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "KPI_WEIGHT",
+      "label": "Pondération de l'indicateur",
+      "presentation": {
+        "description": "Poids attribué à l'indicateur identifié dans le calcul de la performance.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "RATE",
+      "unit": "RATIO",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "MANUAL_REVIEW_ABSENCE_HOURS",
+      "label": "Absence à examiner manuellement",
+      "presentation": {
+        "description": "Heures d'absence dont le traitement de rémunération nécessite une décision humaine.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "MEAL_ELIGIBLE_DAYS",
+      "label": "Jours éligibles à l'indemnité de repas",
+      "presentation": {
+        "description": "Nombre de jours remplissant les conditions de l'indemnité de repas.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_HOLIDAY_HOURS",
+      "label": "Heures normales de nuit et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme nuit et jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_HOURS",
+      "label": "Heures normales de nuit",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires effectuées de nuit sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_SHIFTS",
+      "label": "Postes de nuit",
+      "presentation": {
+        "description": "Nombre de postes de nuit réalisés et reconnus.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures normales de nuit, dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme nuit, dimanche et jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_SUNDAY_HOURS",
+      "label": "Heures normales de nuit et dimanche",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme nuit et dimanche sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_WEEKEND_HOLIDAY_HOURS",
+      "label": "Heures normales de nuit, week-end et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme nuit, week-end et jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_WEEKEND_HOURS",
+      "label": "Heures normales de nuit et week-end",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme nuit et week-end sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_WEEKEND_SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures normales de nuit, week-end, dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme nuit, week-end, dimanche et jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NIGHT_WEEKEND_SUNDAY_HOURS",
+      "label": "Heures normales de nuit, week-end et dimanche",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme nuit, week-end et dimanche sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "NORMAL_HOURS",
+      "label": "Heures normales théoriques",
+      "presentation": {
+        "description": "Nombre d'heures normalement prévues pour l'employé sur la période, avant prise en compte des absences.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ON_CALL_DAYS",
+      "label": "Jours d'astreinte",
+      "presentation": {
+        "description": "Nombre de jours d'astreinte reconnus sur la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ON_CALL_HOURS",
+      "label": "Heures d'astreinte",
+      "presentation": {
+        "description": "Heures d'astreinte hors interventions comptées séparément.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "ON_CALL_INTERVENTIONS",
+      "label": "Interventions pendant astreinte",
+      "presentation": {
+        "description": "Nombre d'interventions réalisées pendant une astreinte.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERNIGHT_STAYS",
+      "label": "Nuitées professionnelles",
+      "presentation": {
+        "description": "Nombre de nuitées professionnelles éligibles à une indemnité.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires de jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires effectuées un jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_HOURS",
+      "label": "Heures supplémentaires",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires toutes catégories confondues sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires de nuit et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires effectuées de nuit un jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_HOURS",
+      "label": "Heures supplémentaires de nuit",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires effectuées de nuit sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires de nuit, dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées comme nuit, dimanche et jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_SUNDAY_HOURS",
+      "label": "Heures supplémentaires de nuit et dimanche",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires effectuées de nuit un dimanche sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_WEEKEND_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires de nuit, week-end et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées comme nuit, week-end et jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_WEEKEND_HOURS",
+      "label": "Heures supplémentaires de nuit et week-end",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires effectuées de nuit pendant le week-end sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_WEEKEND_SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires de nuit, week-end, dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées comme nuit, week-end, dimanche et jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_NIGHT_WEEKEND_SUNDAY_HOURS",
+      "label": "Heures supplémentaires de nuit, week-end et dimanche",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées comme nuit, week-end et dimanche sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires du dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées à la fois comme dimanche et jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_SUNDAY_HOURS",
+      "label": "Heures supplémentaires du dimanche",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires effectuées un dimanche sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_WEEKEND_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires de week-end et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées à la fois comme week-end et jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_WEEKEND_HOURS",
+      "label": "Heures supplémentaires de week-end",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires effectuées pendant le week-end sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_WEEKEND_SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures supplémentaires de week-end, dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées comme week-end, dimanche et jour férié sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "OVERTIME_WEEKEND_SUNDAY_HOURS",
+      "label": "Heures supplémentaires de week-end et dimanche",
+      "presentation": {
+        "description": "Nombre d'heures supplémentaires qualifiées à la fois comme week-end et dimanche sur la période. Les majorations applicables sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAID_ABSENCE_DAYS",
+      "label": "Jours d'absence rémunérée",
+      "presentation": {
+        "description": "Nombre de jours d'absence pour lesquels une rémunération est maintenue.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAID_LEAVE_DAYS",
+      "label": "Jours de congé payé",
+      "presentation": {
+        "description": "Nombre de jours de congé payé pris pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAID_LEAVE_HOURS",
+      "label": "Heures de congé payé",
+      "presentation": {
+        "description": "Volume d'heures d'absence correspondant à des congés payés.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAID_NO_PAYROLL_IMPACT_ABSENCE_HOURS",
+      "label": "Absence rémunérée sans impact paie",
+      "presentation": {
+        "description": "Heures d'absence rémunérées qualifiées par la gestion du temps comme sans impact sur la paie.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAID_WITH_PAYROLL_MARKER_ABSENCE_HOURS",
+      "label": "Absence rémunérée avec marqueur paie",
+      "presentation": {
+        "description": "Heures d'absence rémunérées nécessitant une présentation ou un traitement explicite sur la paie.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PARTIALLY_PAID_ABSENCE_HOURS",
+      "label": "Absence partiellement rémunérée",
+      "presentation": {
+        "description": "Heures d'absence dont la rémunération n'est maintenue qu'en partie.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAYABLE_DAYS",
+      "label": "Jours rémunérables",
+      "presentation": {
+        "description": "Nombre de jours retenus pour le paiement après application des règles de présence et de proratisation.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "SYSTEM",
+        "MANUAL",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAYROLL_IMPACT_ABSENCE_HOURS",
+      "label": "Absence ayant un impact sur la paie",
+      "presentation": {
+        "description": "Heures d'absence qualifiées comme ayant un impact sur la rémunération ou sa présentation.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PAY_PRORATION_RATIO",
+      "label": "Coefficient de proratisation",
+      "presentation": {
+        "description": "Coefficient retenu pour proratiser la rémunération de la période ; 1 signifie aucune réduction.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "RATE",
+      "unit": "RATIO",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "SYSTEM",
+        "MANUAL",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PRESENT_DAYS",
+      "label": "Jours de présence reconnus",
+      "presentation": {
+        "description": "Nombre de jours reconnus comme jours de présence pour les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "PRODUCED_UNITS",
+      "label": "Unités produites",
+      "presentation": {
+        "description": "Nombre d'unités produites pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "QUALITY_ACCEPTANCE_RATE",
+      "label": "Taux d'acceptation qualité",
+      "presentation": {
+        "description": "Part des réalisations acceptées après contrôle ; 1 signifie 100 %.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "RATE",
+      "unit": "RATIO",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "REFUNDED_SALES_AMOUNT",
+      "label": "Ventes remboursées",
+      "presentation": {
+        "description": "Montant des ventes remboursées à prendre en compte dans l'assiette commerciale.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "MONEY",
+      "unit": "CURRENCY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "REJECTED_PRODUCTION_UNITS",
+      "label": "Unités produites rejetées",
+      "presentation": {
+        "description": "Nombre d'unités produites rejetées après contrôle.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "UNIT",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SALES_ACHIEVEMENT_RATIO",
+      "label": "Taux d'atteinte de l'objectif de ventes",
+      "presentation": {
+        "description": "Rapport entre ventes retenues et objectif de ventes ; 1 signifie 100 %.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "RATE",
+      "unit": "RATIO",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SALES_TARGET_AMOUNT",
+      "label": "Objectif de ventes",
+      "presentation": {
+        "description": "Montant cible des ventes pour la période et le périmètre applicables.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "MONEY",
+      "unit": "CURRENCY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SCHEDULED_DAYS",
+      "label": "Jours de travail prévus",
+      "presentation": {
+        "description": "Nombre de jours que l'employé devait travailler selon son calendrier applicable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_CATEGORY_MONTHS",
+      "label": "Ancienneté dans la catégorie — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté dans la catégorie professionnelle applicable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_CONTINUOUS_DAYS",
+      "label": "Ancienneté continue dans l'entreprise — jours",
+      "presentation": {
+        "description": "Nombre de jours d'ancienneté dans la relation d'emploi continue courante ; repart à zéro après une rupture.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_CONTINUOUS_MONTHS",
+      "label": "Ancienneté continue dans l'entreprise — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté dans la relation d'emploi continue courante ; repart à zéro après une rupture.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_DAYS",
+      "label": "Ancienneté cumulée dans l'entreprise — jours",
+      "presentation": {
+        "description": "Nombre de jours d'ancienneté cumulée dans l'entreprise, selon les règles de prise en compte des périodes de service et des suspensions.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_GRADE_MONTHS",
+      "label": "Ancienneté dans le grade — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté dans le grade applicable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_MONTHS",
+      "label": "Ancienneté cumulée dans l'entreprise — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté cumulée dans l'entreprise, selon les règles de prise en compte des périodes de service et des suspensions.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_POSITION_MONTHS",
+      "label": "Ancienneté dans le poste — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté dans le poste applicable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_SITE_MONTHS",
+      "label": "Ancienneté sur le site — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté sur le site d'affectation applicable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_TITLE_MONTHS",
+      "label": "Ancienneté dans l'intitulé de fonction — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté dans l'intitulé de fonction applicable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_UNIT_MONTHS",
+      "label": "Ancienneté dans l'unité — mois",
+      "presentation": {
+        "description": "Nombre de mois d'ancienneté dans l'unité organisationnelle applicable.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "MONTH",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SENIORITY_YEARS",
+      "label": "Ancienneté cumulée dans l'entreprise — années",
+      "presentation": {
+        "description": "Nombre d'années révolues d'ancienneté cumulée dans l'entreprise.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "YEAR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SICK_LEAVE_DAYS",
+      "label": "Jours d'arrêt maladie",
+      "presentation": {
+        "description": "Nombre de jours d'absence liés à un arrêt maladie reconnu.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SICK_LEAVE_HOURS",
+      "label": "Heures d'arrêt maladie",
+      "presentation": {
+        "description": "Volume d'heures d'absence liées à un arrêt maladie.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures normales du dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme dimanche et jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "SUNDAY_HOURS",
+      "label": "Heures normales du dimanche",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires effectuées un dimanche sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "TRANSPORT_ELIGIBLE_DAYS",
+      "label": "Jours éligibles à l'indemnité de transport",
+      "presentation": {
+        "description": "Nombre de jours remplissant les conditions de l'indemnité de transport.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "TRAVEL_DAYS",
+      "label": "Jours de déplacement professionnel",
+      "presentation": {
+        "description": "Nombre de jours de déplacement professionnel reconnus.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "TRAVEL_ELIGIBLE_DAYS",
+      "label": "Jours de déplacement éligibles",
+      "presentation": {
+        "description": "Jours de déplacement validés pour une indemnité.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "UNAUTHORIZED_ABSENCE_HOURS",
+      "label": "Heures d'absence non autorisée",
+      "presentation": {
+        "description": "Volume d'heures d'absence non autorisées.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "UNPAID_ABSENCE_DAYS",
+      "label": "Jours d'absence non rémunérée",
+      "presentation": {
+        "description": "Nombre de jours d'absence sans maintien de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "UNPAID_AUTHORIZED_ABSENCE_HOURS",
+      "label": "Absence autorisée non rémunérée",
+      "presentation": {
+        "description": "Heures d'absence autorisées ne conservant pas de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "UNPAID_DEDUCTED_ABSENCE_HOURS",
+      "label": "Absence non rémunérée déjà déduite",
+      "presentation": {
+        "description": "Heures d'absence non rémunérées pour lesquelles une déduction a déjà été prise en compte en amont.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "UNPAID_LEAVE_DAYS",
+      "label": "Jours de congé sans solde",
+      "presentation": {
+        "description": "Nombre de jours de congé sans solde pris pendant la période.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "UNPAID_LEAVE_HOURS",
+      "label": "Heures de congé sans solde",
+      "presentation": {
+        "description": "Volume d'heures d'absence correspondant à des congés sans solde.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WEEKEND_HOLIDAY_HOURS",
+      "label": "Heures normales de week-end et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme week-end et jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WEEKEND_HOURS",
+      "label": "Heures normales de week-end",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires effectuées pendant le week-end sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WEEKEND_SUNDAY_HOLIDAY_HOURS",
+      "label": "Heures normales de week-end, dimanche et jour férié",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme week-end, dimanche et jour férié sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WEEKEND_SUNDAY_HOURS",
+      "label": "Heures normales de week-end et dimanche",
+      "presentation": {
+        "description": "Nombre d'heures de travail non supplémentaires qualifiées comme week-end et dimanche sur la période. Les majorations éventuelles sont déterminées par les règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WORKED_DAYS",
+      "label": "Jours effectivement travaillés",
+      "presentation": {
+        "description": "Nombre de jours pendant lesquels un travail effectif a été constaté.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WORKED_DAYS_CORRECTION",
+      "label": "Correction de jours travaillés",
+      "presentation": {
+        "description": "Différence signée de jours travaillés reconnue pour une période antérieure.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WORKED_EQUIVALENT_ABSENCE_HOURS",
+      "label": "Absence assimilée à du temps travaillé",
+      "presentation": {
+        "description": "Heures d'absence reconnues comme équivalentes à des heures travaillées pour certains calculs.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WORKED_EQUIVALENT_DAYS",
+      "label": "Jours assimilés à du travail",
+      "presentation": {
+        "description": "Nombre de jours non travaillés mais assimilés à du travail pour certaines règles de rémunération.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "INTEGER",
+      "unit": "DAY",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WORKED_HOURS",
+      "label": "Heures effectivement travaillées",
+      "presentation": {
+        "description": "Nombre d'heures de travail effectivement réalisées sur la période, hors heures supplémentaires si celles-ci sont collectées séparément.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "minimum": 0,
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "MANUAL",
+        "INTEGRATION",
+        "IMPORT"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    },
+    {
+      "code": "WORKED_HOURS_CORRECTION",
+      "label": "Correction d'heures travaillées",
+      "presentation": {
+        "description": "Différence signée d'heures reconnues pour une période antérieure.",
+        "labels": {},
+        "descriptions": {}
+      },
+      "valueType": "QUANTITY",
+      "unit": "HOUR",
+      "allowedValues": [],
+      "binding": "PERIODIC",
+      "allowedSources": [
+        "INTEGRATION",
+        "MANUAL",
+        "IMPORT",
+        "SYSTEM"
+      ],
+      "status": "ACTIVE",
+      "validFrom": "2026-01-01"
+    }
+  ],
+  "prorationPolicies": [
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "101"
+      },
+      "content": {
+        "label": "Prorata Salaire de base",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-11-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "150"
+      },
+      "content": {
+        "label": "Prorata Sursalaire",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "151"
+      },
+      "content": {
+        "label": "Prorata Salaire de base catégoriel",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "152"
+      },
+      "content": {
+        "label": "Prorata Salaire de base complémentaire",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "153"
+      },
+      "content": {
+        "label": "Prorata Salaire maximum catégoriel",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "154"
+      },
+      "content": {
+        "label": "Prorata Salaire minimum catégoriel",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "251"
+      },
+      "content": {
+        "label": "Prorata Forfait heures supplémentaires",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "301"
+      },
+      "content": {
+        "label": "Prorata Prime d'ancienneté",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "350"
+      },
+      "content": {
+        "label": "Prorata Prime de responsabilité",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "351"
+      },
+      "content": {
+        "label": "Prorata Prime vestimentaire",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "352"
+      },
+      "content": {
+        "label": "Prorata Prime de guichet",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "353"
+      },
+      "content": {
+        "label": "Prorata Prime de caisse",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "354"
+      },
+      "content": {
+        "label": "Prorata Ancienneté gelée",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "355"
+      },
+      "content": {
+        "label": "Prorata Forfait VAL",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "501"
+      },
+      "content": {
+        "label": "Prorata Indemnité de transport",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "502"
+      },
+      "content": {
+        "label": "Prorata Indemnité de logement",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "550"
+      },
+      "content": {
+        "label": "Prorata Indemnité de représentation",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "551"
+      },
+      "content": {
+        "label": "Prorata Indemnité de représentation complémentaire",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "552"
+      },
+      "content": {
+        "label": "Prorata Indemnité de risque",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "553"
+      },
+      "content": {
+        "label": "Prorata Indemnité de lait",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "554"
+      },
+      "content": {
+        "label": "Prorata Indemnité de déplacement Grand Nord",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "555"
+      },
+      "content": {
+        "label": "Prorata Indemnité de soutien",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    },
+    {
+      "scope": {
+        "level": "COUNTRY"
+      },
+      "target": {
+        "number": "556"
+      },
+      "content": {
+        "label": "Prorata Indemnité de déplacement",
+        "sourceReference": {
+          "title": "Code du travail camerounais, salaire dû au prorata du temps de présence"
+        },
+        "temporalRule": {
+          "force": "ALLOWED_OPTIONS",
+          "triggers": [
+            "ENTRY",
+            "EXIT"
+          ],
+          "basis": "CALENDAR_DAYS",
+          "allowedBases": [
+            "FIXED_30_DAYS",
+            "WORKING_DAYS",
+            "CALENDAR_DAYS"
+          ]
+        },
+        "absenceRules": [],
+        "validFrom": "2026-01-01"
+      }
+    }
+  ],
+  "remunerationRules": [],
+  "inputRules": [],
+  "benefitRules": [],
+  "remunerationGrids": [
+    {
+      "code": "CCA_BASE_GRID",
+      "element": "101",
+      "scope": {
+        "level": "COLLECTIVE_AGREEMENT",
+        "collectiveAgreement": "CCA-CC-2026"
+      },
+      "currency": "XAF",
+      "frequency": "MONTHLY",
+      "content": {
+        "label": "Grille des salaires de base CCA",
+        "sourceReference": {
+          "title": "Convention collective CCA (CCA-CC-2026), salaires de base par catégorie et échelon"
+        },
+        "cells": [
+          {
+            "category": "03",
+            "echelon": "A",
+            "amount": 111437
+          },
+          {
+            "category": "04",
+            "echelon": "A",
+            "amount": 151962
+          },
+          {
+            "category": "04",
+            "echelon": "B",
+            "amount": 163100
+          },
+          {
+            "category": "04",
+            "echelon": "C",
+            "amount": 174224
+          },
+          {
+            "category": "04",
+            "echelon": "D",
+            "amount": 185360
+          },
+          {
+            "category": "05",
+            "echelon": "A",
+            "amount": 196784
+          },
+          {
+            "category": "05",
+            "echelon": "B",
+            "amount": 208207
+          },
+          {
+            "category": "05",
+            "echelon": "C",
+            "amount": 219630
+          },
+          {
+            "category": "05",
+            "echelon": "D",
+            "amount": 231063
+          },
+          {
+            "category": "05",
+            "echelon": "E",
+            "amount": 242478
+          },
+          {
+            "category": "05",
+            "echelon": "F",
+            "amount": 253911
+          },
+          {
+            "category": "06",
+            "echelon": "A",
+            "amount": 245125
+          },
+          {
+            "category": "06",
+            "echelon": "B",
+            "amount": 257737
+          },
+          {
+            "category": "06",
+            "echelon": "C",
+            "amount": 270357
+          },
+          {
+            "category": "06",
+            "echelon": "D",
+            "amount": 282966
+          },
+          {
+            "category": "06",
+            "echelon": "E",
+            "amount": 295588
+          },
+          {
+            "category": "06",
+            "echelon": "F",
+            "amount": 308200
+          },
+          {
+            "category": "07",
+            "echelon": "A",
+            "amount": 244042
+          },
+          {
+            "category": "07",
+            "echelon": "B",
+            "amount": 263350
+          },
+          {
+            "category": "07",
+            "echelon": "C",
+            "amount": 282636
+          },
+          {
+            "category": "07",
+            "echelon": "D",
+            "amount": 301945
+          },
+          {
+            "category": "07",
+            "echelon": "E",
+            "amount": 321232
+          },
+          {
+            "category": "07",
+            "echelon": "F",
+            "amount": 340540
+          },
+          {
+            "category": "08",
+            "echelon": "A",
+            "amount": 340540
+          },
+          {
+            "category": "08",
+            "echelon": "B",
+            "amount": 363239
+          },
+          {
+            "category": "08",
+            "echelon": "C",
+            "amount": 385938
+          },
+          {
+            "category": "08",
+            "echelon": "D",
+            "amount": 408638
+          },
+          {
+            "category": "08",
+            "echelon": "E",
+            "amount": 431338
+          },
+          {
+            "category": "09",
+            "echelon": "A",
+            "amount": 430074
+          },
+          {
+            "category": "09",
+            "echelon": "B",
+            "amount": 467703
+          },
+          {
+            "category": "09",
+            "echelon": "C",
+            "amount": 505337
+          },
+          {
+            "category": "09",
+            "echelon": "D",
+            "amount": 542964
+          },
+          {
+            "category": "10",
+            "echelon": "A",
+            "amount": 494672
+          },
+          {
+            "category": "10",
+            "echelon": "B",
+            "amount": 520488
+          },
+          {
+            "category": "10",
+            "echelon": "C",
+            "amount": 546284
+          },
+          {
+            "category": "10",
+            "echelon": "D",
+            "amount": 572099
+          },
+          {
+            "category": "10",
+            "echelon": "E",
+            "amount": 597904
+          },
+          {
+            "category": "10",
+            "echelon": "F",
+            "amount": 623719
+          },
+          {
+            "category": "11",
+            "echelon": "A",
+            "amount": 623719
+          },
+          {
+            "category": "11",
+            "echelon": "B",
+            "amount": 649535
+          },
+          {
+            "category": "11",
+            "echelon": "C",
+            "amount": 675527
+          },
+          {
+            "category": "12",
+            "echelon": "A",
+            "amount": 752770
+          },
+          {
+            "category": "12",
+            "echelon": "B",
+            "amount": 778585
+          },
+          {
+            "category": "12",
+            "echelon": "C",
+            "amount": 804401
+          }
+        ],
+        "validFrom": "2026-01-01"
+      }
+    }
+  ]
+}
