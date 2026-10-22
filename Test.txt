@@ -1,0 +1,61 @@
+Ton salarié de prod a bien une ancienneté fausse : le calcul est juste, ce sont les dates de ses contrats, chargées par la reprise Amplitude, qui sont décalées. Le portail est construit et tourne sur le serveur, mais il n'est pas encore accessible depuis l'extérieur.
+
+Ancienneté du salarié CCA-BANK-CM (353a44cc)
+
+Ce qui cloche. La fiche indique une ancienneté Groupe depuis le 23/08/2026 : 60 jours, 1 mois. Il aurait dû y avoir 40 mois, depuis l'embauche du 05/06/2023. L'ancienneté société, catégorie et titre est fausse de la même façon, alors qu'il n'a jamais changé de société ni de catégorie.
+
+La cause : un jour manquant entre deux contrats. Chaque mobilité crée un nouveau contrat. Pour que l'ancienneté continue, la fin d'un contrat doit tomber exactement au début du suivant. Les contrats chargés le 13/10 par la reprise « MIGRATION AMPLITUDE » ont deux défauts :
+- leurs dates sont posées à minuit heure de Douala (23:00 UTC la veille), alors que le service lit les dates en UTC : toutes ressortent avec un jour d'avance (embauche affichée le 04/06 au lieu du 05/06) ;
+- leur fin est posée au début du dernier jour, et non au lendemain.
+
+Résultat : un jour n'est couvert par aucun contrat à chaque mobilité (23/01 et 23/08). La continuité est rompue deux fois, et l'ancienneté repart du dernier contrat. C'est pour ça que le résultat se dégrade dès qu'il y a plusieurs contrats.
+
+Les chiffres de ta fiche se recalculent au jour près avec cette hypothèse : unité 211 + 60 = 271 jours, cumul Groupe 963 + 211 + 60 = 1 234 jours (deux jours perdus).
+
+Le code n'est pas en cause. Les routes de l'API enregistrent tout à minuit UTC, clôturent une sortie au lendemain du dernier jour et un transfert à la date d'effet. En dev, les 531 mobilités chargées par l'API sont toutes contiguës. Le problème vient uniquement de cette reprise en prod.
+
+Le test (SuccessiveContractsSeniorityTest, commit c0c0499) rejoue cette carrière deux fois :
+- avec des contrats bien enchaînés, l'ancienneté part du 05/06/2023 (1 235 jours, 40 mois, 3 ans) pour le Groupe, la société et la catégorie ;
+- avec les dates telles qu'en prod, il retrouve exactement ta fiche (depuis le 23/08, 60 jours, cumul 1 234).
+
+Autre incohérence dans les mouvements de ce salarié :
+- le transfert du 24/01 part du grade A alors qu'il est en B depuis le 01/02/2025 ;
+- le changement de fonction du 24/08 passe déjà en C, puis une promotion B→C arrive le 01/09.
+
+D'où des passages d'un jour en A puis en B dans l'historique des grades, et 2 promotions comptées.
+
+Ce qui influence l'ancienneté :
+- les dates de début et de fin des contrats ; la continuité exige que la fin de l'un soit égale au début du suivant ;
+- les mouvements, qui découpent poste, grade, unité et site ;
+- les suspensions, déduites seulement du cumul Groupe ;
+- la reprise d'ancienneté d'un transfert entre sociétés ;
+- la date de référence.
+
+L'agent a trouvé d'autres défauts dans le calcul :
+- Après une sortie, les mois et années continuent d'augmenter (le compte de jours, lui, s'arrête bien), et les anciennetés par société, poste et grade deviennent vides.
+- PATCH /activate ne lève pas une suspension : le contrat reste suspendu et son ancienneté reste neutralisée.
+- Une mutation antidatée pendant une suspension fait commencer la suspension à la date de la mutation.
+- Les suspensions ne sont déduites ni de l'ancienneté société, ni de celle de grade et de poste.
+
+Je n'ai rien corrigé, conformément à ta demande.
+
+À décider :
+- Corriger les contrats de prod. Je propose une route d'administration qui recale les dates des contrats d'un salarié (ou de toute une société) sur leurs mouvements. Elle passe par l'API, pas par la base, et peut être relancée sans risque. Je n'ai pas accès à la prod : il faudra la lancer de ton côté.
+- Les défauts trouvés par l'agent : je peux les corriger dans l'ordre, en commençant par l'ancienneté après une sortie.
+
+Déploiement de self-service-portal
+
+Ce qui est fait :
+- le portail tourne sur le serveur (port 3104 en local), conteneur sain ;
+- la racine redirige bien vers la page de connexion, et le proxy /api relaie les appels vers les API ;
+- le Dockerfile non suivi du dépôt était une copie de celui de web-organization, qui attendait un package-lock.json inexistant : je l'ai remplacé par une version bun (commit a671af6 sur master) ;
+- les mocks, actifs par défaut, sont désactivés dans le compose ;
+- RUNBOOK et DEPLOYMENT sont à jour.
+
+Ce qui bloque :
+- Pas encore accessible publiquement. Le nom self-service.fluxoon.dhi-cm.com, prévu par la configuration du portail, n'existe pas dans le DNS. Dès que l'enregistrement A vers 84.234.31.85 sera créé, je pose le vhost nginx et le certificat.
+- Écrans cassés quoi qu'il arrive :
+  - les documents appellent encore les anciennes routes, sans entité légale, refusées depuis le cloisonnement d'aujourd'hui ;
+  - la carrière vise career-service, alors que les contrats sont désormais dans employment-service.
+
+Toujours en attente de ton accord : le correctif du démarrage de Docker sur le serveur et la compression JSON dans nginx.
